@@ -197,6 +197,17 @@ CONFIG_PACKAGE_libreadline=y
 CONFIG_PACKAGE_terminfo=y
 EOF
 rm -rf package-temp
+# 添加Subconverter
+git clone https://github.com/tindy2013/openwrt-subconverter.git package-temp/openwrt-subconverter
+mv -f package-temp/openwrt-subconverter package/
+cat >> .config <<EOF
+CONFIG_PACKAGE_subconverter=y
+CONFIG_SUBCONVERTER_OPENSSL=y
+# CONFIG_SUBCONVERTER_MBEDTLS is not set
+# CONFIG_SUBCONVERTER_STDREGEX is not set
+CONFIG_SUBCONVERTER_PCRE2=y
+EOF
+rm -rf package-temp
 # Add luci-theme-opentomcat
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git theme-temp/luci-theme-opentomcat
 rm -rf theme-temp/luci-theme-opentomcat/LICENSE
