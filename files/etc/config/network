@@ -16,6 +16,6 @@ config interface 'lan'
 	option ip6assign '60'
 	option gateway '10.0.0.1'
 	option broadcast '10.0.0.0'
-	option ipaddr '10.0.0.8
-	option dns '10.0.0.1
+	option ipaddr '10.0.0.10'
+	option dns '10.0.0.1'
 
