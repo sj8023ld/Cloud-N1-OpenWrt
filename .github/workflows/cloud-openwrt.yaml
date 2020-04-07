@@ -50,7 +50,7 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-#安装clashr内核
+      
     - name: Install Clash Binaries
       run: |
         mkdir -p openwrt/package/base-files/files/etc/clash
@@ -114,3 +114,15 @@ jobs:
       with:
         name: images
         path: docker/opt/imgs
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
+        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
+        allowUpdates: true
+        tag: ${{ env.tag_name }}
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        body: |
+          当前使用版本:
+          ${{ env.useVersionInfo }}
+        artifacts: "${{ env.FIRMWARE }}/* , docker/opt/imgs/*"
