@@ -7,7 +7,7 @@ fi
 
 TMPDIR=openwrt_rootfs
 OUTDIR=opt/imgs
-IMG_NAME=unifreq/openwrt-aarch64
+IMG_NAME=moz/openwrt
 
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 
