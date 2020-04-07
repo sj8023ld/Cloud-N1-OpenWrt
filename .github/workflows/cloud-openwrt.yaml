@@ -1,11 +1,11 @@
 name: Cloud OpenWrt
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'script.sh'
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - 'script.sh'
 #  schedule:
 #    - cron: 0 8 * * 0
   watch:
