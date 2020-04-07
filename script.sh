@@ -291,3 +291,5 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_vsftpd-alt is not set
 # CONFIG_PACKAGE_zerotier is not set
 EOF
+#添加默认防火墙规则
+echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
