@@ -302,3 +302,5 @@ cat >> .config <<EOF
 EOF
 #添加默认防火墙规则
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
+# Debug kpr adapt aarch64
+sed -i 's/,arm/,aarch64/' package/luci-app-koolproxyR/Makefile
