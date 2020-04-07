@@ -208,6 +208,15 @@ CONFIG_SUBCONVERTER_OPENSSL=y
 CONFIG_SUBCONVERTER_PCRE2=y
 EOF
 rm -rf package-temp
+# 添加KoolProxy
+git clone https://github.com/project-openwrt/luci-app-koolproxyR.git package-temp/luci-app-koolproxyR
+mv -f package-temp/luci-app-koolproxyR package/
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-ipt-nat-extra=y
+CONFIG_PACKAGE_luci-app-koolproxyR=y
+CONFIG_PACKAGE_iptables-mod-nat-extra=y
+EOF
+rm -rf package-temp
 # Add luci-theme-opentomcat
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git theme-temp/luci-theme-opentomcat
 rm -rf theme-temp/luci-theme-opentomcat/LICENSE
