@@ -184,6 +184,9 @@ CONFIG_PACKAGE_dnsmasq_full_conntrack=y
 CONFIG_PACKAGE_dnsmasq_full_noid=y
 CONFIG_PACKAGE_dnsmasq_full_broken_rtc=y
 CONFIG_PACKAGE_diffutils=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_libustream-openssl=y
+CONFIG_PACKAGE_openssl-util=y
 EOF
 # Add luci-app-openclash
 git clone https://github.com/vernesong/OpenClash.git package-temp
