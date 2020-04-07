@@ -315,6 +315,9 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_vsftpd-alt is not set
 # CONFIG_PACKAGE_zerotier is not set
 EOF
+# Timezone
+sed -i "s/timezone='UTC'/timezone='CST-8'/" package/base-files/files/bin/config_generate
+sed -i "/timezone='CST-8'/a set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
 #添加默认防火墙规则
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 # Debug kpr adapt aarch64
