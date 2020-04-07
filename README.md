@@ -1,4 +1,5 @@
 # 云编译 N1 OpenWrt Docker固件
+![Cloud OpenWrt](https://github.com/sj8023ld/Cloud-N1-OpenWrt/workflows/Cloud%20OpenWrt/badge.svg)
 说明：
 - 本项目使用 Github Actions 下载 [Lean](https://github.com/coolsnowwolf/lede) 的 `Openwrt` 源码仓库，进行云编译。
 - 本项目编译固件适配斐讯 N1 盒子，如需刷机，另需使用打包工具生成刷机固件。
