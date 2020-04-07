@@ -126,3 +126,5 @@ jobs:
           当前使用版本:
           ${{ env.useVersionInfo }}
         artifacts: "${{ env.FIRMWARE }}/* , docker/opt/imgs/*"
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成啦~
