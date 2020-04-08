@@ -174,19 +174,6 @@ CONFIG_SQUASHFS_TOOLS_XZ_SUPPORT=y
 CONFIG_PACKAGE_lscpu=y
 CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -mcpu=generic"
 CONFIG_CPU_TYPE="generic"
-CONFIG_PACKAGE_dnsmasq-full=y
-CONFIG_PACKAGE_dnsmasq_full_dhcp=y
-CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_dnsmasq_full_dnssec=y
-CONFIG_PACKAGE_dnsmasq_full_auth=y
-CONFIG_PACKAGE_dnsmasq_full_ipset=y
-CONFIG_PACKAGE_dnsmasq_full_conntrack=y
-CONFIG_PACKAGE_dnsmasq_full_noid=y
-CONFIG_PACKAGE_dnsmasq_full_broken_rtc=y
-CONFIG_PACKAGE_diffutils=y
-CONFIG_PACKAGE_ipset=y
-CONFIG_PACKAGE_libustream-openssl=y
-CONFIG_PACKAGE_openssl-util=y
 EOF
 # Add luci-app-openclash
 git clone https://github.com/vernesong/OpenClash.git package-temp
@@ -219,15 +206,6 @@ CONFIG_SUBCONVERTER_OPENSSL=y
 # CONFIG_SUBCONVERTER_MBEDTLS is not set
 # CONFIG_SUBCONVERTER_STDREGEX is not set
 CONFIG_SUBCONVERTER_PCRE2=y
-EOF
-rm -rf package-temp
-# 添加KoolProxy
-git clone https://github.com/project-openwrt/luci-app-koolproxyR.git package-temp/luci-app-koolproxyR
-mv -f package-temp/luci-app-koolproxyR package/
-cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-ipt-nat-extra=y
-CONFIG_PACKAGE_luci-app-koolproxyR=y
-CONFIG_PACKAGE_iptables-mod-nat-extra=y
 EOF
 rm -rf package-temp
 # Add luci-theme-opentomcat
