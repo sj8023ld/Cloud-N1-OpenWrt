@@ -178,7 +178,10 @@ EOF
 # Add luci-app-openclash
 git clone https://github.com/vernesong/OpenClash.git package-temp
 mv -f package-temp/luci-app-openclash package/lean/
+git clone https://github.com/vernesong/OpenClash.git package-temp
+mv -f package-temp/OpenClash/luci-app-openclash package/lean/
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-clash=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_LIBCURL_COOKIES=y
 CONFIG_LIBCURL_FILE=y
