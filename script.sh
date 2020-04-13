@@ -314,9 +314,12 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package-temp/lua-maxmin
 git clone https://github.com/jerrykuku/luci-app-vssr.git package-temp/luci-app-vssr
 mv -f package-temp/lua-maxminddb package/lean/
 mv -f package-temp/luci-app-vssr package/lean/
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package-temp/luci-app-adguardhome
+mv -f package-temp/luci-app-adguardhome package/lean/
 cat >> .config <<EOF
 CONFIG_PACKAGE_lua-maxminddb=y
 CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-adguardhome=y
 EOF
 rm -rf package-temp
 # Timezone
