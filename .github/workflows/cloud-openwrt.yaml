@@ -114,17 +114,17 @@ jobs:
       with:
         name: Docker_N1_OpenWrt
         path: docker/opt/imgs
-    - name: Create release
-      uses: ncipollo/release-action@v1
-      with:
-        name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
-        allowUpdates: true
-        tag: ${{ env.tag_name }}
-        commit: master
-        token: ${{ secrets.RELEASES_TOKEN }}
-        body: |
-          当前使用版本:
-          ${{ env.useVersionInfo }}
-        artifacts: "${{ env.FIRMWARE }}/* , docker/opt/imgs/*"
+ #   - name: Create release
+ #     uses: ncipollo/release-action@v1
+ #     with:
+ #       name: ${{ env.DATE }} 🚀 / N1-Openwrt | 自动编译
+ #       allowUpdates: true
+ #       tag: ${{ env.tag_name }}
+ #       commit: master
+ #       token: ${{ secrets.RELEASES_TOKEN }}
+ #       body: |
+ #         当前使用版本:
+ #         ${{ env.useVersionInfo }}
+ #       artifacts: "${{ env.FIRMWARE }}/* , docker/opt/imgs/*"
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}编译完成啦~
