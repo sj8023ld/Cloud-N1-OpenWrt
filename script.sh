@@ -179,7 +179,7 @@ EOF
 git clone https://github.com/vernesong/OpenClash.git package-temp
 mv -f package-temp/luci-app-openclash package/lean/
 #添加clash
-git clone https://github.com/frainzy1477/luci-app-clash package-temp
+git clone https://github.com/frainzy1477/luci-app-clash package-temp/luci-app-clash
 mv -f package-temp/luci-app-clash package/
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-clash=y
